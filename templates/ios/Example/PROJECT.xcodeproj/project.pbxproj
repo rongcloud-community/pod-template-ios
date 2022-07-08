@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0294AA2C2876CD2B00944D2B /* OCLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0294AA2F2876CD2B00944D2B /* Build configuration list for PBXAggregateTarget "OCLint" */;
+			buildPhases = (
+				0294AA302876CD3000944D2B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = OCLint;
+			productName = OCLint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -212,8 +226,12 @@
 			attributes = {
 				CLASSPREFIX = CPD;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "PROJECT_OWNER";
+                ORGANIZATIONNAME = "PROJECT_OWNER";
 				TargetAttributes = {
+					0294AA2C2876CD2B00944D2B = {
+						CreatedOnToolsVersion = 13.4;
+						ProvisioningStyle = Automatic;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -221,7 +239,7 @@
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "PROJECT" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -234,6 +252,7 @@
 			targets = (
 				6003F589195388D20070C39A /* PROJECT_Example */,
 				6003F5AD195388D20070C39A /* PROJECT_Tests */,
+				0294AA2C2876CD2B00944D2B /* OCLint */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +278,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0294AA302876CD3000944D2B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -configuration DEBUG -UseModernBuildSystem=NO -destination 'generic/platform=iOS' clean build | xcpretty -r json-compilation-database -o compile_commands.json\noclint-json-compilation-database -e Pods -- -report-type xcode -max-priority-1=9999 -max-priority-2=9999 -max-priority-3=9999\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6003F586195388D20070C39A /* Sources */ = {
@@ -317,6 +356,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0294AA2D2876CD2B00944D2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0294AA2E2876CD2B00944D2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		6003F5BD195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,6 +522,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0294AA2F2876CD2B00944D2B /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0294AA2D2876CD2B00944D2B /* Debug */,
+				0294AA2E2876CD2B00944D2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6003F585195388D10070C39A /* Build configuration list for PBXProject "PROJECT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

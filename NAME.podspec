@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.social_media_url = 'https://www.rongcloud.cn/devcenter'
 
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = '${POD_NAME}/Classes/**/*'
   

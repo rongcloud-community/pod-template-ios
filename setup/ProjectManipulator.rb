@@ -25,6 +25,7 @@ module Pod
         "PROJECT" => @configurator.pod_name,
         "ORGANIZATION_NAME" => @configurator.organization,
         "CPD" => @prefix,
+        "#{@configurator.pod_name}_NAME" => "PROJECT_NAME"
       }
       replace_internal_project_settings
 
