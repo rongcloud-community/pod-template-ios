@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license      = { :type => "Copyright", :text => "Copyright 2022 RongCloud" }
   s.author           = { '${USER_NAME}' => '${USER_EMAIL}' }
-  s.source           = { :git => 'git@github.com:rongcloud-community/${POD_NAME}.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/rongcloud-community/${POD_NAME}.git', :tag => s.version.to_s }
 
   s.social_media_url = 'https://www.rongcloud.cn/devcenter'
 
