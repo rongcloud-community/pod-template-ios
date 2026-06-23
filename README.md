@@ -1,3 +1,8 @@
+> [!WARNING]
+> ⚠️ **暂停维护说明**
+>
+> 该工程已不再维护。
+
 pod-template
 ============
 
@@ -12,6 +17,8 @@ An opinionated template for creating a Pod with the following features:
 - Also supports Carthage
 
 ## Getting started
+
+matrix-wechat-rcemodify 是融云基于微信开源的 Matrix 框架进行二次封装与适配的 iOS 性能监控库，以预编译 Framework 的形式分发，使其适配自身场景化 SDK 体系的接入需求。
 
 There are two reasons for wanting to work on this template, making your own or improving the one for everyone's. In both cases you will want to work with the ruby classes inside the `setup` folder, and the example base template that it works on from inside `template/ios/`. 
 
